@@ -22,7 +22,7 @@
 
   
 
-  <title>hexo博客搭建 | chendx博客</title>
+  <title>photo | chendx博客</title>
 
   
 
@@ -96,11 +96,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">hexo博客搭建</h1>
+          <h1 class="title-wrap">photo</h1>
           <h2 class="title-sub-wrap">
             <strong>chendx</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2021-11-05T06:30:04.000Z" itemprop="datePublished">2021-11-05</time>
+            <time  class="article-date" datetime="2021-11-05T13:00:04.000Z" itemprop="datePublished">2021-11-05</time>
           </h2>
           <ul class="wrap-list dark">
   
@@ -129,196 +129,27 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="安装"><a href="#安装" class="headerlink" title="安装:"></a>安装:</h2><h3 id="官网下载git"><a href="#官网下载git" class="headerlink" title="官网下载git"></a>官网下载git</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com/</a></p>
-</blockquote>
-<h3 id="官网下载nodejs"><a href="#官网下载nodejs" class="headerlink" title="官网下载nodejs"></a>官网下载nodejs</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">https://nodejs.org/zh-cn/</a></p>
-</blockquote>
-<h2 id="进入git"><a href="#进入git" class="headerlink" title="进入git"></a>进入git</h2><p>右键打开git bash here</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105200711456.png" alt="image-20211105200711456"></p>
-<blockquote>
-<p>node -v</p>
-</blockquote>
-<p>查看nodejs版本看看下载好没有</p>
-<blockquote>
-<p>npm -v</p>
-</blockquote>
-<p>查看npm版本</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105200735364.png" alt="image-20211105200735364"></p>
-<p>因为国内有些慢所以先下载cnpm，命令行敲入</p>
-<blockquote>
-<p>npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a></p>
-</blockquote>
-<p>安装完后cnpm -v查看一下，跳出一大段版本号就说明安装完成了</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105200859119.png" alt="image-20211105200859119"></p>
-<p>Hexo</p>
-<p>cnpm安装hexo</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105200920750.png" alt="image-20211105200920750"></p>
-<p>然后查看hexo版本</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105200930879.png" alt="image-20211105200930879"></p>
-<p>然后看看路径，建一个文件夹blog</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105200941341.png" alt="image-20211105200941341"></p>
-<p>这里命令行创建，也可以手动创建，然后cd到blog路径下</p>
-<p>然后初始化一个hexo博客</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105200953530.png" alt="image-20211105200953530"></p>
-<p>然后</p>
-<blockquote>
-<p>hexo clean  </p>
-</blockquote>
-<p>清除缓存文件</p>
-<blockquote>
-<p>hexo g  </p>
-</blockquote>
-<p>生成网站静态文件到默认设置的 public 文件夹</p>
-<blockquote>
-<p>hexo s  </p>
-</blockquote>
-<p>启动本地服务器</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105201023790.png" alt="image-20211105201023790"></p>
-<p>然后浏览器进入localhost:4000，就会看到hexo自动升成的页面</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105201037924.png" alt="image-20211105201037924"></p>
-<p>注册github账户</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a></p>
-</blockquote>
-<p>注册完后进入GitHub点击右上角的your repositories</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105201057442.png" alt="image-20211105201057442"></p>
-<p>New一个新仓库</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\clip_image002.jpg" alt="img"></p>
-<p>仓库名要和你注册的名字一样，后面加上.github.io</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\clip_image004.jpg" alt="img"></p>
-<p><strong>生成SSH添加到GitHub</strong></p>
-<p>创建完回到git</p>
-<blockquote>
-<p>git config –global user.name “yourname”</p>
-</blockquote>
-<blockquote>
-<p>git config –global user.email “youremail”</p>
-</blockquote>
-<p>查看一下</p>
-<blockquote>
-<p>git config user.name</p>
-</blockquote>
-<blockquote>
-<p>git config user.email</p>
-</blockquote>
-<p>然后创建SSH,一路回车</p>
-<blockquote>
-<p>ssh-keygen -t rsa -C “youremail”</p>
-</blockquote>
-<p>已经生成了.ssh的文件夹。在你的电脑中找到这个文件夹。</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\clip_image006.jpg" alt="img"></p>
-<p><code>id_rsa</code>是你这台电脑的私人秘钥，不能给别人看的，<code>id_rsa.pub</code>是公共秘钥，可以随便给别人看，把这个公钥放在GitHub上</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\clip_image008.jpg" alt="img"></p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\clip_image010.jpg" alt="img"></p>
-<p>在git中，查看是否成功</p>
-<blockquote>
-<p>ssh -T <a href="mailto:git@github.com">git@github.com</a></p>
-</blockquote>
-<h2 id="将hexo部署到GitHub"><a href="#将hexo部署到GitHub" class="headerlink" title="将hexo部署到GitHub"></a>将hexo部署到GitHub</h2><p>打开站点配置文件 <code>_config.yml</code>，翻到最后，修改为YourgithubName就是你的GitHub账户</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"></span><br><span class="line"> type: git</span><br><span class="line"></span><br><span class="line"> repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line"></span><br><span class="line"> branch: main</span><br></pre></td></tr></table></figure>
-
-<p>需要先安装deploy-git ，也就是部署的命令,这样你才能用命令部署到GitHub</p>
-<blockquote>
-<p>cnpm install hexo-deployer-git –save</p>
-</blockquote>
-<p>然后</p>
-<blockquote>
-<p>hexo clean</p>
-</blockquote>
-<blockquote>
-<p>hexo g</p>
-</blockquote>
-<blockquote>
-<p>hexo d</p>
-</blockquote>
-<p>注意hexo d时要你输入username和password。</p>
-<p><code>部署成功后就可以在``http://yourname.github.io</code> 看到你的博客了！！</p>
-<h2 id="设置个人域名"><a href="#设置个人域名" class="headerlink" title="设置个人域名"></a>设置个人域名</h2><p>现在你的个人网站的地址是 yourname.github.io，如果需要设置个人域名，就得去腾讯云买一个域名。</p>
-<p>注册一个腾讯云账户,我买的是 chendx.info，各个后缀的价格不太一样，比如最广泛的.com就比较贵。</p>
-<p>你需要先去进行实名认证,然后在域名控制台中，看到你购买的域名。</p>
-<p>点解析进去，添加解析。<br><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105202048032.png" alt="image-20211105202048032"></p>
-<p>点击快速添加解析，点击域名映射CNAME，添加你的 yourname.github.io</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105202335398.png" alt="image-20211105202335398"></p>
-<p>登录GitHub，进入之前创建的仓库，点击settings，设置Custom domain，输入你的域名chendx.info</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105202525220.png" alt="image-20211105202525220"></p>
-<p>然后在你的博客文件source中创建一个名为CNAME的txt文件，写上你的域名，然后重命名文件删除后缀。</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105202701892.png" alt="image-20211105202701892"></p>
-<p>在博客文件中的_config.yml文件中的url改成自己的域名</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105204232410.png" alt="image-20211105204232410"></p>
-<p>回到git，输入</p>
-<blockquote>
-<p>hexo clean</p>
-</blockquote>
-<blockquote>
-<p>hexo g</p>
-</blockquote>
-<blockquote>
-<p>hexo d</p>
-</blockquote>
-<p>在浏览器中输入你的域名就可以看到你的博客了。</p>
-<h2 id="hexo写文章"><a href="#hexo写文章" class="headerlink" title="hexo写文章"></a>hexo写文章</h2><blockquote>
-<p>hexo new “a”</p>
-</blockquote>
-<p>然后在你的博客文件source/_post中打开a.md文件就可以写文章了，当然不一定是a.md你想写什么名字就什么名字，你喜欢就好。</p>
-<p>写完文章后，回到git，输入</p>
-<blockquote>
-<p>hexo clean</p>
-</blockquote>
-<blockquote>
-<p>hexo g</p>
-</blockquote>
-<blockquote>
-<p>hexo d</p>
-</blockquote>
-<p>这样你的文章就更新上去了。</p>
-<h2 id="hexo更改主题"><a href="#hexo更改主题" class="headerlink" title="hexo更改主题"></a>hexo更改主题</h2><p>进入hexo官网</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/">https://hexo.io/</a></p>
-</blockquote>
-<p>点击themes就可以看到很多主题了</p>
-<p>看到喜欢的就点击底下的链接，进到github中clone到博客文件的themes中</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105203700232.png" alt="image-20211105203700232"></p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105203847253.png" alt="image-20211105203847253"></p>
-<blockquote>
-<p>git clone <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame.git">https://github.com/zoeingwingkei/frame.git</a> themes/frame</p>
-</blockquote>
-<p>在博客文件中的_config.yml文件中的拉到最后</p>
-<p><img src="/2021/11/05/hexo/Users\PC\Desktop\web\blog\source_posts\photo\image-20211105204324413.png" alt="image-20211105204324413"></p>
-<p>theme改成主题的文件名</p>
-<p>然后</p>
-<blockquote>
-<p>hexo clean</p>
-</blockquote>
-<blockquote>
-<p>hexo g</p>
-</blockquote>
-<blockquote>
-<p>hexo d</p>
-</blockquote>
-<p>这样主题就改好了</p>
-
+        
       </section>
 
       
       
         <nav class="article-nav">
           
+          
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2021/11/05/photo/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">photo</h2>
+        <a href="/2021/11/05/hexo/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">hexo博客搭建</h2>
         </a>
       
-      <div class="card-text--row">Newer</div>
+      <div class="card-text--row">Older</div>
     </div>
   </article>
 </div>
-          
           
         </nav>
       
