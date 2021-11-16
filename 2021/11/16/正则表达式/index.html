@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 5.4.0">
+
+  
+
+  
+
+  
+    <meta name="author" content="chendx">
+  
+
+  
+
+  
+
+  <title>正则表达式 | chendx博客</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          chendx博客
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a href="/links">友链</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">正则表达式</h1>
+          <h2 class="title-sub-wrap">
+            <strong>chendx</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2021-11-16T12:46:31.000Z" itemprop="datePublished">2021-11-16</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">🏷️ 正则表达式</a></li>
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <p>—–转载笔记，仅供学习使用——</p>
+<h4 id="…hd"><a href="#…hd" class="headerlink" title="[…hd]"></a>[…hd]</h4><p>可以将字符串转为数组</p>
+<h4 id="Array-filter"><a href="#Array-filter" class="headerlink" title="Array.filter()"></a>Array.filter()</h4><p><code>filter()</code> 方法创建一个新数组, 其包含通过所提供函数实现的测试的所有元素</p>
+<h4 id="match"><a href="#match" class="headerlink" title="match()"></a>match()</h4><p>match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。</p>
+<h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><p><strong>箭头函数表达式</strong>的语法比<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/function">函数表达式</a>更简洁，并且没有自己的<code>this</code>，<code>arguments</code>，<code>super</code>或<code>new.target</code>。箭头函数表达式更适用于那些本来需要匿名函数的地方，并且它不能用作构造函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当只有一个参数时，圆括号是可选的：</span></span><br><span class="line">(singleParam) =&gt; &#123; statements &#125;</span><br><span class="line">singleParam =&gt; &#123; statements &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 没有参数的函数应该写成一对圆括号。</span></span><br><span class="line">() =&gt; &#123; statements &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="正则字符串提取数字"><a href="#正则字符串提取数字" class="headerlink" title="正则字符串提取数字"></a>正则字符串提取数字</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> hd = <span class="string">&#x27;daw21321dasda23123123&#x27;</span>;</span><br><span class="line"><span class="comment">// 不使用正则表达式写一个方法</span></span><br><span class="line"><span class="comment">// console.log(Number.isNaN(parseInt(&#x27;1&#x27;)));</span></span><br><span class="line"><span class="comment">// ...将字符串转换成数组形式 Array.from()方法也可以 使用isNaN判断是否为非数字</span></span><br><span class="line"><span class="comment">// let news = [...hd].filter(v=&gt;!Number.isNaN(parseInt(v)));</span></span><br><span class="line"><span class="comment">// 使用join方法连接</span></span><br><span class="line"><span class="comment">// 使用正则表达式</span></span><br><span class="line"><span class="keyword">let</span> news = hd.match(<span class="regexp">/\d/g</span>).join(<span class="string">&quot;&quot;</span>)  <span class="comment">//全局g  搜索数字\d  拼接数组.join()</span></span><br><span class="line"><span class="built_in">console</span>.log(news);</span><br></pre></td></tr></table></figure>
+
+<h2 id="正则字变量"><a href="#正则字变量" class="headerlink" title="正则字变量"></a>正则字变量</h2><ol>
+<li>使用eval()方法</li>
+<li>使用test()方法返回的是布尔值</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> hd = <span class="string">&#x27;daw21321dasda23123123&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> a = <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> news = <span class="built_in">eval</span>(<span class="string">`/<span class="subst">$&#123;a&#125;</span>/`</span>).test(hd)  <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(news);</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用对象创建"><a href="#使用对象创建" class="headerlink" title="使用对象创建"></a>使用对象创建</h2><ol>
+<li>替换字符串中匹配到的字符</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">HTML</span><br><span class="line">&lt;div class=&quot;content&quot;&gt;mr90.top&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">let div = document.querySelector(&#x27;.content&#x27;)</span><br><span class="line">let a = prompt(&#x27;输入字符&#x27;);</span><br><span class="line">let regs = new RegExp(a,&quot;g&quot;);</span><br><span class="line">div.innerHTML = div.innerHTML.replace(regs,search=&gt;&#123;</span><br><span class="line">    return `&lt;span style=&quot;color:red&quot;&gt;$&#123;search&#125;&lt;/span&gt;`</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="选择符"><a href="#选择符" class="headerlink" title="选择符 |"></a>选择符 |</h2><ol>
+<li>匹配左右两侧的条件</li>
+<li>原子组() 原子表[]</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JS</span><br><span class="line">let tel = &#x27;023-2312322&#x27;</span><br><span class="line">console.log(/(023|020)\-\d&#123;7,8&#125;/.test(tel)); // true</span><br><span class="line">// 重复的条件使用原子组的方法&#123;7，8&#125;表示 7-8位的数字 \- 表示转义</span><br><span class="line">let reg = /(12|34)/;</span><br><span class="line">let hd = &#x27;31w231&#x27;;</span><br><span class="line">console.log(hd.match(reg)); // null</span><br></pre></td></tr></table></figure>
+
+<h2 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h2><ol>
+<li>在字面量里面 使用<code>\d \.</code> 将字符可实现转义</li>
+<li>在构造函数中<code>\d \.</code> 表示的是该字符 所以 必须再加一个转义符 <code>\\d \\.</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">JS</span><br><span class="line">let price = &#x27;12@21&#x27;;</span><br><span class="line">// . 除换行外的任何字符</span><br><span class="line">console.log(/\d+.\d/.test(price)); //true</span><br><span class="line">let reg = new RegExp(&#x27;\\d+\\.\\d+&#x27;)</span><br><span class="line">// \\ 双转义</span><br><span class="line">console.log(reg.test(price)); //false</span><br><span class="line"></span><br><span class="line">// 网址</span><br><span class="line">let url = &#x27;https://u.mr90.top&#x27;</span><br><span class="line">let reg = new RegExp(/https?:\/\/\w+\.\w+\.\w+/)</span><br><span class="line">console.log(reg.test(url)); //true</span><br><span class="line">console.log(/https?:\/\/\w+\.\w+/.test(url)); //true</span><br></pre></td></tr></table></figure>
+
+<h2 id="字符边界符"><a href="#字符边界符" class="headerlink" title="字符边界符"></a>字符边界符</h2><ol>
+<li>边界符表示开始和结尾必须满足条件 <code>/^[a-z]$/</code></li>
+<li><code>&#123;3,6&#125;</code> 加入边界字符 才能控制其数量范围</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">HTML</span><br><span class="line">&lt;input type=&quot;text&quot; value=&quot;&quot; name=&quot;user&quot;&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    document.querySelector(&quot;[name=&#x27;user&#x27;]&quot;)</span><br><span class="line">    .addEventListener(&#x27;keyup&#x27;,function()&#123;</span><br><span class="line">        let flag = this.value.match(/^[a-z]&#123;3,6&#125;$/)</span><br><span class="line">        console.log(flag);</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数值与空白元字符"><a href="#数值与空白元字符" class="headerlink" title="数值与空白元字符"></a>数值与空白元字符</h2><ol>
+<li><code>\d</code> 匹配数字 <code>\D</code> 匹配非数字</li>
+<li>在原子表中首页<code>^</code>表示非的意思<code>/[^]/</code></li>
+<li><code>\s</code> 表示匹配空白和换行 <code>\S</code> 非空白</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JS</span><br><span class="line">let hd = &#x27;张三:021-9999299,李四:022-2122122&#x27;</span><br><span class="line">// 匹配所有的数字号码</span><br><span class="line">console.log(hd.match(/\d&#123;3&#125;\-\d&#123;7,8&#125;/g)); //[&quot;021-9999299&quot;, &quot;022-2122122&quot;]</span><br><span class="line">// 匹配姓名 + 表示匹配相邻的符合条件的</span><br><span class="line">console.log(hd.match(/[^:\d,-\s]+/g)); // [&quot;张三&quot;, &quot;李四&quot;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="w和W元字符"><a href="#w和W元字符" class="headerlink" title="w和W元字符"></a>w和W元字符</h2><ol>
+<li><code>\w</code> 匹配字母和数字 下划线</li>
+<li><code>\W</code>与之相反</li>
+</ol>
+<h2 id="点字符的使用"><a href="#点字符的使用" class="headerlink" title="点字符的使用"></a>点字符的使用</h2><ol>
+<li>匹配所有字符默认模式下，它匹配除了换行符以外的任意字符。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JS</span><br><span class="line">let hd = `wad\nawd\n`</span><br><span class="line">console.log(hd.match(/.+/g)); // [wad,awd]</span><br></pre></td></tr></table></figure>
+
+<h2 id="匹配所有字符"><a href="#匹配所有字符" class="headerlink" title="匹配所有字符"></a>匹配所有字符</h2><ol>
+<li>在原子组中<code>[\s\S]</code> 或者<code>[\d\D]</code></li>
+<li>匹配标签使用 <code>/&lt;span&gt;[\s\S]+&lt;/span&gt;/</code></li>
+</ol>
+<h2 id="i和g-模式修正"><a href="#i和g-模式修正" class="headerlink" title="i和g 模式修正"></a>i和g 模式修正</h2><ol>
+<li><code>g</code>全局匹配 <code>i</code>不区分大小写</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">JS</span><br><span class="line">let hd = `</span><br><span class="line">#1 js,200元 #</span><br><span class="line">#2 php,300元 #</span><br><span class="line">#9 mr90.top # 你好</span><br><span class="line">#3 node.js,180元 #</span><br><span class="line">`</span><br><span class="line">let lessons = hd.match(/^\s*#\d+\s+.+\s+#$/gm).map(v =&gt; &#123;</span><br><span class="line">    v = v.replace(/\s*#\d+\s*/, &#x27;&#x27;).replace(/\s+#/, &#x27;&#x27;)</span><br><span class="line">    let [name, price] = v.split(&#x27;,&#x27;)</span><br><span class="line">    return &#123; name, price &#125;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(lessons);</span><br><span class="line">/*</span><br><span class="line">0: &#123;name: &quot;js&quot;, price: &quot;200元&quot;&#125;</span><br><span class="line">1: &#123;name: &quot;php&quot;, price: &quot;300元&quot;&#125;</span><br><span class="line">2: &#123;name: &quot;node.js&quot;, price: &quot;180元&quot;&#125;</span><br><span class="line">length: 3*/</span><br></pre></td></tr></table></figure>
+
+<h2 id="汉字与字符属性"><a href="#汉字与字符属性" class="headerlink" title="汉字与字符属性"></a>汉字与字符属性</h2><ol>
+<li><code>\p</code>表示匹配字符</li>
+<li><code>\P</code> 相反</li>
+</ol>
+<h2 id="lastIndex"><a href="#lastIndex" class="headerlink" title="lastIndex"></a>lastIndex</h2><ol>
+<li>lastIndex 属性用于规定下次匹配的起始位置</li>
+<li><code>exec()</code> 方法用于检索字符串中的正则表达式的匹配。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">JS</span><br><span class="line">let hd = &#x27;dawdaw31&#x27;;</span><br><span class="line">let reg = /\w/g;</span><br><span class="line">console.log(reg.exec(hd));</span><br><span class="line">console.log(reg.lastIndex); // lastIndex 属性用于规定下次匹配的起始位置</span><br><span class="line">// 将匹配到的值赋值给res 有值打印数据 否则返回null 不满足循环条件 循环</span><br><span class="line">while(res=reg.exec(hd))&#123;</span><br><span class="line">    console.log(res);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="y模式"><a href="#y模式" class="headerlink" title="y模式"></a>y模式</h2><ol>
+<li>后一次匹配都是从上一次匹配成功的下一个位置开始</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">JS</span><br><span class="line">let hd =`你好世界大王大大:11111111,1111231,213123212,</span><br><span class="line">达瓦达,网站:u.mr90.top`</span><br><span class="line">let reg = /(\d+),?/y</span><br><span class="line">reg.lastIndex = 9</span><br><span class="line">let qq = []</span><br><span class="line">// console.log(reg.exec(hd)); </span><br><span class="line">while(res=reg.exec(hd)) qq.push(res[1])</span><br><span class="line">console.log(qq);</span><br></pre></td></tr></table></figure>
+
+<h2 id="原子表"><a href="#原子表" class="headerlink" title="原子表"></a>原子表</h2><ol>
+<li><code>[]</code> 匹配中括号内的所有条件</li>
+<li>原子组和原子表搭配使用</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">JS</span><br><span class="line">let times = &#x27;2020-02/21&#x27;</span><br><span class="line">console.log(times.match(/^\d&#123;4&#125;[-\/]\d&#123;2&#125;[-\/]\d&#123;2&#125;$/)); // 2020/02-21</span><br><span class="line">console.log(times.match(/^\d&#123;4&#125;([-\/])\d&#123;2&#125;\1\d&#123;2&#125;$/)); // null</span><br><span class="line">console.log(times.match(/^\d&#123;4&#125;([-\/])\d&#123;2&#125;\1\d&#123;2&#125;$/)); // 2020/02/21</span><br></pre></td></tr></table></figure>
+
+<h2 id="区间匹配"><a href="#区间匹配" class="headerlink" title="区间匹配"></a>区间匹配</h2><ol>
+<li>数字区间<code>[0-9]+</code> 加号表示贪婪模式</li>
+<li>字母区间<code>[a-z]</code></li>
+</ol>
+<h2 id="排除匹配"><a href="#排除匹配" class="headerlink" title="排除匹配"></a>排除匹配</h2><ol>
+<li><code>[^]</code> 表示排除匹配</li>
+<li><code>\p</code>表示匹配满足<code>&#123;&#125;</code>内的字符</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JS</span><br><span class="line">// let hd = &#x27;u.mr90.top&#x27;</span><br><span class="line">// console.log(hd.match(/[^u]/gi)); //[&quot;.&quot;, &quot;m&quot;, &quot;r&quot;, &quot;9&quot;, &quot;0&quot;, &quot;.&quot;, &quot;t&quot;, &quot;o&quot;, &quot;p&quot;]</span><br><span class="line">let hd = `张三:231-23123123,李四#:123-312313;`</span><br><span class="line">console.log(hd.match(/[^:\w-,#;]+/g)); // 贪婪模式下的排除匹配</span><br><span class="line">console.log(hd.match(/\p&#123;sc=Han&#125;+/gu)); // [&quot;张三&quot;, &quot;李四&quot;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="原子表字符不解析"><a href="#原子表字符不解析" class="headerlink" title="原子表字符不解析"></a>原子表字符不解析</h2><ol>
+<li><code>[.+]</code> <code>[()]</code> 仅表示原来字符的意思</li>
+</ol>
+<h2 id="原子表匹配"><a href="#原子表匹配" class="headerlink" title="原子表匹配"></a>原子表匹配</h2><ol>
+<li><code>s</code>忽略换行符 <code>*</code>表示0个或者多个</li>
+<li><code>[\d\D] [\s\S]</code> 匹配所有字符</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">HTML</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;ddawd</span><br><span class="line">        dawd</span><br><span class="line">    &lt;/h1&gt;</span><br><span class="line">    &lt;h2&gt;dwad</span><br><span class="line"></span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">    &lt;span&gt;dasdwa</span><br><span class="line">        adaw</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let body = document.body;</span><br><span class="line">    // let reg = /&lt;(\w+)&gt;[^]+&lt;\/\1&gt;/gi // 注意贪婪模式</span><br><span class="line">    let reg = /&lt;(h[1-6])&gt;[^]*&lt;\/\1&gt;/gi // 注意贪婪模式 *表示0个或者多个</span><br><span class="line">    body.innerHTML = body.innerHTML.replace(reg,&#x27;&#x27;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="原子组"><a href="#原子组" class="headerlink" title="原子组"></a>原子组</h2><ol>
+<li><code>()</code> 表示一个整体</li>
+<li>可进行别名的编号</li>
+<li>使用原子组实现标签的替换</li>
+<li>在原子组回调函数中,各个参数表示的是 第一个是满足条件的所有内容 其他参数 依次为定义的满足原子组条件的内容</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">HTML</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;ddawd</span><br><span class="line">        dawd</span><br><span class="line">    &lt;/h1&gt;</span><br><span class="line">    &lt;h5&gt;&lt;/h5&gt;</span><br><span class="line">    &lt;h2&gt;dwad</span><br><span class="line"></span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">    &lt;span&gt;dasdwa</span><br><span class="line">        adaw</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    // 原子组替换</span><br><span class="line">    let body = document.body</span><br><span class="line">    // body.innerHTML = body.innerHTML.replace(/&lt;(h[1-6]+)&gt;([^]*)&lt;\/\1&gt;/g,`&lt;p&gt;$2&lt;/p&gt;`) // 直接表示</span><br><span class="line">    body.innerHTML= body.innerHTML.replace(/&lt;(h[1-6]+)&gt;([^]*)&lt;\/\1&gt;/g,(f0,f1,f2)=&gt;&#123;</span><br><span class="line">        // console.log(f0);  // 输入满足条件的所有</span><br><span class="line">        // console.log(f1); // 输出第一个原子组匹配的内容</span><br><span class="line">        // console.log(f2);// 输出第二个原子组匹配的内容</span><br><span class="line">        return `&lt;p&gt;$&#123;f2&#125;&lt;/p&gt;`</span><br><span class="line">    &#125;) // 函数表示</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="不记录分组"><a href="#不记录分组" class="headerlink" title="不记录分组"></a>不记录分组</h2><ol>
+<li>使用不记录分组,就是使用原子组后 无法再去使用函数参数去调用</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">JS</span><br><span class="line">   let url = `https://u.mr90.top</span><br><span class="line">    http://github.com</span><br><span class="line">    httpS://mr90.top`</span><br><span class="line">    // 使用不记录分组,就是使用原子组后 无法再去使用函数参数去调用</span><br><span class="line">   let reg = /https?:\/\/((?:\w+\.)?\w+\.(?:com|top))/gi</span><br><span class="line">   console.log(reg.test(url)); //true // 有满足条件的内容</span><br><span class="line">   console.log(url.match(reg)); // [&quot;https://u.mr90.top&quot;, &quot;http://github.com&quot;, &quot;httpS://mr90.top&quot;]</span><br><span class="line">//    console.log(reg.exec(url)); // 返回满足条件的第一个内容</span><br><span class="line">//    console.log(reg.lastIndex); // 记录下次开始时的索引位置</span><br><span class="line">   let urlA = [];</span><br><span class="line">   while(res=reg.exec(url)) urlA.push(res[1])</span><br><span class="line">   console.log(urlA);</span><br></pre></td></tr></table></figure>
+
+<h2 id="重复匹配"><a href="#重复匹配" class="headerlink" title="重复匹配"></a>重复匹配</h2><ol>
+<li><code>+</code> 一个或者多个 <code>&#123;1,&#125;</code> 类似与加号</li>
+<li><code>*</code> 0个或者多个 <code>&#123;0,&#125;</code> 类似与*号</li>
+<li><code>?</code> 0个或者1个</li>
+</ol>
+<h2 id="批量使用正则完成密码的验证"><a href="#批量使用正则完成密码的验证" class="headerlink" title="批量使用正则完成密码的验证"></a>批量使用正则完成密码的验证</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">JS</span><br><span class="line">// 对表单输入的值进行验证</span><br><span class="line">document.querySelector(&#x27;[name=pwd&#x27;)</span><br><span class="line">    .addEventListener(&#x27;keyup&#x27;, (e) =&gt; &#123;</span><br><span class="line">        // console.log();</span><br><span class="line">        let value = e.target.value</span><br><span class="line">        let reg = [</span><br><span class="line">            /^[a-z0-9]&#123;5,7&#125;$/i,</span><br><span class="line">            /[A-Z]/, /[\d]/</span><br><span class="line">        ]</span><br><span class="line">        let state = reg.every(v=&gt;v.test(value))</span><br><span class="line">        console.log(state?&#x27;正确&#x27;:&#x27;错误&#x27;);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="禁止贪婪"><a href="#禁止贪婪" class="headerlink" title="禁止贪婪"></a>禁止贪婪</h2><ol>
+<li><code>&#123;2,&#125;?</code> 限制贪婪</li>
+<li><code>*?</code> 禁止贪婪</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">HTML</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;main&gt;</span><br><span class="line">        &lt;span&gt;u.mr90.top1&lt;/span&gt;</span><br><span class="line">        &lt;span&gt;u.mr90.top2&lt;/span&gt;</span><br><span class="line">        &lt;span&gt;u.mr90.top3&lt;/span&gt;</span><br><span class="line">    &lt;/main&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let main = document.querySelector(&#x27;main&#x27;)</span><br><span class="line">    let reg = /&lt;span&gt;([^]+?)&lt;\/span&gt;/g // ?加上问号 并且写到原子组中为了将贪婪的范围缩小到每一行上</span><br><span class="line">    main.innerHTML = main.innerHTML.replace(reg,(p0,p1)=&gt;&#123;</span><br><span class="line">        console.log(p0);</span><br><span class="line">        return `&lt;h2 style=&quot;color:red&quot;&gt;$&#123;p1&#125;&lt;/h2&gt;`</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="matchAll-全局匹配"><a href="#matchAll-全局匹配" class="headerlink" title="matchAll 全局匹配"></a>matchAll 全局匹配</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">HTML</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;main&gt;</span><br><span class="line">        &lt;span&gt;u.mr90.top1&lt;/span&gt;</span><br><span class="line">        &lt;span&gt;u.mr90.top2&lt;/span&gt;</span><br><span class="line">        &lt;span&gt;u.mr90.top3&lt;/span&gt;</span><br><span class="line">    &lt;/main&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    // 不使用matchAll方法</span><br><span class="line">    let main = document.querySelector(&#x27;main&#x27;)</span><br><span class="line">    let reg = /&lt;span&gt;([^]+?)&lt;\/span&gt;/g // ?加上问号 并且写到原子组中为了将贪婪的范围缩小到每一行上</span><br><span class="line">    let content = [];</span><br><span class="line">    // main.innerHTML = main.innerHTML.replace(reg,(p0,p1)=&gt;&#123;</span><br><span class="line">    //     content.push(p1)</span><br><span class="line">    //     return `&lt;h2 style=&quot;color:red&quot;&gt;$&#123;p1&#125;&lt;/h2&gt;`</span><br><span class="line">    // &#125;)</span><br><span class="line">    // console.table(content)</span><br><span class="line"></span><br><span class="line">    // 使用matchAll方法</span><br><span class="line">    let hd = main.innerHTML.matchAll(reg)</span><br><span class="line">    // console.log(main.innerHTML.matchAll()); // 遍历迭代</span><br><span class="line">    for (const i of hd) &#123;</span><br><span class="line">        content.push(i[1])</span><br><span class="line">        // console.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">    console.table(content);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="exec-全局匹配"><a href="#exec-全局匹配" class="headerlink" title="exec 全局匹配"></a>exec 全局匹配</h2><ol>
+<li>匹配时 <code>g</code>不能缺少</li>
+<li><code>search</code> 返回匹配的索引值</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">JS</span><br><span class="line">// exec方法 匹配全局</span><br><span class="line">let main = document.querySelector(&#x27;main&#x27;)</span><br><span class="line">let reg = /&lt;span&gt;([^]+?)&lt;\/span&gt;/g // ?加上问号 并且写到原子组中为了将贪婪的范围缩小到每一行上</span><br><span class="line">function fn(string, reg) &#123;</span><br><span class="line">    let content = [];</span><br><span class="line">    while (res = reg.exec(string)) &#123;</span><br><span class="line">        content.push(res)</span><br><span class="line">    &#125; return content</span><br><span class="line">&#125;</span><br><span class="line">console.log(fn(main.innerHTML, reg));</span><br><span class="line">// exec方法 匹配全局</span><br><span class="line">let main = document.querySelector(&#x27;main&#x27;)</span><br><span class="line">let reg = /&lt;span&gt;([^]+?)&lt;\/span&gt;/g // ?加上问号 并且写到原子组中为了将贪婪的范围缩小到每一行上</span><br><span class="line">let content = [];</span><br><span class="line">function fn(string, reg) &#123;</span><br><span class="line">    while (res = reg.exec(string)) content.push(res)</span><br><span class="line">&#125;</span><br><span class="line">fn(main.innerHTML, reg)</span><br><span class="line">console.log(content);</span><br></pre></td></tr></table></figure>
+
+<h2 id="符"><a href="#符" class="headerlink" title="$符"></a>$符</h2><ol>
+<li>`$`` 匹配开头的第一个字符</li>
+<li><code>$&#39;</code> 匹配结尾字符</li>
+<li><code>$&amp;</code> 匹配自身</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">JS</span><br><span class="line"><span class="comment">// let tel = &#x27;2020/12/23&#x27;</span></span><br><span class="line"><span class="comment">// console.log(tel.replace(/\//g,&#x27;-&#x27;)); // 2020-12-23</span></span><br><span class="line"><span class="comment">// let tel = &#x27;(021)9999999 (023)4444444&#x27;</span></span><br><span class="line"><span class="comment">// console.log(tel.replace(/[(]+(\d&#123;3&#125;)[)](\d&#123;7&#125;)/g,&#x27;$1-$2&#x27;)); //021-9999999 023-4444444</span></span><br><span class="line"><span class="keyword">let</span> tel = <span class="string">&#x27;%Harry=&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(tel.replace(<span class="regexp">/\w+/g</span>,<span class="string">&#x27;$`&#x27;</span>)); <span class="comment">// $` 匹配开头的第一个字符 %%=</span></span><br><span class="line"><span class="built_in">console</span>.log(tel.replace(<span class="regexp">/\w+/g</span>,<span class="string">&quot;$&#x27;&quot;</span>)); <span class="comment">// $&#x27; 匹配结尾字符 %==</span></span><br><span class="line"><span class="built_in">console</span>.log(tel.replace(<span class="regexp">/\w+/g</span>,<span class="string">&quot;$&amp;&quot;</span>)); <span class="comment">// $&amp; 匹配自身</span></span><br><span class="line"><span class="built_in">console</span>.log(tel.replace(<span class="regexp">/\w+/g</span>,<span class="string">&quot;$`$`$&amp;$&#x27;$&#x27;&quot;</span>)); <span class="comment">// $&amp; 匹配自身</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="原子组的别名"><a href="#原子组的别名" class="headerlink" title="原子组的别名"></a>原子组的别名</h2><ol>
+<li>格式 <code>?&lt;别名&gt;</code></li>
+<li>调用 <code>&lt;别名&gt;</code></li>
+</ol>
+<p>HTML</p>
+<body>
+
+<pre><code>&lt;main&gt;
+    &lt;a href=&quot;http://u.mr90.top&quot;&gt;博客&lt;/a&gt;
+    &lt;a href=&#39;https://baidu.com&#39;&gt;百度&lt;/a&gt;
+    &lt;a href=&quot;https://github.com&quot;&gt;Github&lt;/a&gt;
+&lt;/main&gt;
+</code></pre>
+</body>
+
+<script>
+    let main = document.querySelector('main')
+    let reg = /<a.*?href=(['"])(?<link>.*?)\1>(?<title>.*?)<\/a>/gi
+    // 进行迭代遍历
+    for (const i of main.innerHTML.matchAll(reg)) {
+        // console.log(i);
+        console.table(i.groups)
+    }
+</script>
+
+
+<h2 id="断言匹配"><a href="#断言匹配" class="headerlink" title="断言匹配 ?="></a>断言匹配 ?=</h2><ol>
+<li><code>(?=)</code> 表示在之前条件的后面满足该断言匹配的内容</li>
+<li><code>(?&lt;=)</code> 表示前面是条件的匹配内容</li>
+<li><code>(?!)</code> 表示后面不是某个条件的内容</li>
+<li><code>(?&lt;!)</code> 表示前面不是某个条件的内容</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">HTML</span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">main</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://u.mr90.top&quot;</span>&gt;</span>博客<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;https://baidu.com&#x27;</span>&gt;</span>百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://github.com&quot;</span>&gt;</span>Github<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> main = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;main&#x27;</span>)</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> reg = <span class="regexp">/(?&lt;=href=([&#x27;&quot;]))(.*?)(?=\1&gt;)/gi</span></span></span><br><span class="line"><span class="javascript">    main.innerHTML = main.innerHTML.replace(reg,<span class="string">&#x27;https://mr90.top&#x27;</span>)</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="手机号码断言隐藏"><a href="#手机号码断言隐藏" class="headerlink" title="手机号码断言隐藏"></a>手机号码断言隐藏</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JS</span><br><span class="line"><span class="keyword">let</span> users = <span class="string">`</span></span><br><span class="line"><span class="string">李四：12323212232</span></span><br><span class="line"><span class="string">张三：12322131122</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"><span class="keyword">let</span> reg = <span class="regexp">/(?&lt;=\d&#123;7&#125;)\d&#123;4&#125;/gi</span></span><br><span class="line"><span class="built_in">console</span>.log(users.replace(reg,<span class="string">&#x27;*&#x27;</span>.repeat(<span class="number">4</span>)));</span><br></pre></td></tr></table></figure>
+
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2021/11/10/nodejs/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">nodejs</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="http://t14.baidu.com/it/u=1118743529,28108615&amp;fm=224&amp;app=112&amp;f=JPEG?w=400&amp;h=400" class="soft-size--round soft-style--box" alt="chendx">
+    
+    
+      <h2>chendx</h2>
+    
+    
+      <p>贵在坚持</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>4</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        0
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        4
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+<section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 945.02305225v28.15620663a24.27259221 24.27259221 0 0 1-24.27259221 24.27259335H394.0352a48.54518557 48.54518557 0 0 1-41.74885888-23.78714112l-110.68302222-184.47170332a132.04290333 132.04290333 0 0 1-17.47626667-48.54518557h118.4502511a200.97706667 200.97706667 0 0 1 76.21594113 14.56355556l20.38897777 133.49925888a48.54518557 48.54518557 0 0 0 36.40888888 27.67075555l16.01991111 2.91271112a24.27259221 24.27259221 0 0 1 20.38897778 25.72894889zM997.45185223 463.45481443a194.18074112 194.18074112 0 0 1-38.8361489 116.50844445 24.75804445 24.75804445 0 0 1-36.4088889 0l-34.95253333-34.95253333a24.27259221 24.27259221 0 0 1-2.91271111-30.58346667 97.09036999 97.09036999 0 0 0 0-106.79940665 24.27259221 24.27259221 0 0 1 2.91271111-30.58346666l34.95253333-34.95253334a24.75804445 24.75804445 0 0 1 18.93262223-7.28177777 26.2144 26.2144 0 0 1 17.47626667 9.70903665A194.18074112 194.18074112 0 0 1 997.45185223 463.45481443z m-194.18074112-388.36148111v776.72296335a48.54518557 48.54518557 0 0 1-48.54518556 48.54518443h-28.64165888a48.54518557 48.54518557 0 0 1-33.98163001-14.07810332l-145.63555556-143.20829668A291.27111111 291.27111111 0 0 0 342.57730333 657.63555556H172.18370333a145.63555556 145.63555556 0 0 1-145.63555556-145.63555556v-97.09036999a145.63555556 145.63555556 0 0 1 145.63555556-145.63555556h170.3936a291.27111111 291.27111111 0 0 0 206.31703779-85.43952668l145.63555555-143.20829554a48.54518557 48.54518557 0 0 1 33.98162888-14.07810446H754.72592555a48.54518557 48.54518557 0 0 1 48.54518556 48.54518555z" fill="currentColor"></path>
+</svg>
+    <span>NOTICE</span>
+  </div>
+  <div class="widget-body">
+    <p>点收藏不迷路https://chendx.info/</p>
+  </div>
+</section>
+
+
+      <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+    <span>CATEGORYS</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categorys-list">
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/css/" style="font-size: 10px;" class="tags-cloud-0">css</a> <a href="/tags/hexo/" style="font-size: 10px;" class="tags-cloud-0">hexo</a> <a href="/tags/nodejs/" style="font-size: 10px;" class="tags-cloud-0">nodejs</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;" class="tags-cloud-0">正则表达式</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://github.com/miiiku/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+        
+          <a href="https://twitter.com/guanquanhong" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M962.285714 233.142857q-38.285714 56-92.571429 95.428571 0.571429 8 0.571429 24 0 74.285714-21.714286 148.285714t-66 142-105.428571 120.285714-147.428571 83.428571-184.571429 31.142857q-154.857143 0-283.428571-82.857143 20 2.285714 44.571429 2.285714 128.571429 0 229.142857-78.857143-60-1.142857-107.428571-36.857143t-65.142857-91.142857q18.857143 2.857143 34.857143 2.857143 24.571429 0 48.571429-6.285714-64-13.142857-106-63.714286t-42-117.428571l0-2.285714q38.857143 21.714286 83.428571 23.428571-37.714286-25.142857-60-65.714286t-22.285714-88q0-50.285714 25.142857-93.142857 69.142857 85.142857 168.285714 136.285714t212.285714 56.857143q-4.571429-21.714286-4.571429-42.285714 0-76.571429 54-130.571429t130.571429-54q80 0 134.857143 58.285714 62.285714-12 117.142857-44.571429-21.142857 65.714286-81.142857 101.714286 53.142857-5.714286 106.285714-28.571429z"></path>
+</svg>
+          </a>
+        
+      
+    </div>
+     
+    <p>&copy; 2021 <a href="/" target="_blank">chendx</a></p>
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>
